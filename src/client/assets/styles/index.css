@@ -1,0 +1,130 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nanum Gothic', serif; }
+
+article, section, div, h1, p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.contents {
+  position: relative; }
+
+.sidebar {
+  position: absolute;
+  left: 0px;
+  color: #766e6e;
+  background-color: #fbfcff;
+  display: block;
+  width: 270px;
+  height: 705px; }
+  .sidebar .sidebar-logo {
+    padding-top: 20px;
+    height: 15%;
+    margin-bottom: 20px; }
+    .sidebar .sidebar-logo img {
+      display: block;
+      position: absolute;
+      margin: 0 auto;
+      width: 270px;
+      right: 25px;
+      height: auto; }
+  .sidebar .sidebar-list {
+    height: 25%;
+    padding: 5px 30px; }
+    .sidebar .sidebar-list a {
+      color: #766e6e;
+      text-decoration: none; }
+    .sidebar .sidebar-list h1 {
+      font-weight: 300;
+      line-height: 40px; }
+  .sidebar .sidebar-sns {
+    margin-top: 25px;
+    height: 25%;
+    padding: 5px 30px; }
+    .sidebar .sidebar-sns a {
+      color: #766e6e;
+      text-decoration: none; }
+    .sidebar .sidebar-sns h1 {
+      font-weight: 300;
+      line-height: 40px; }
+    .sidebar .sidebar-sns .sidebar-liner {
+      width: 30px;
+      height: 10px;
+      border-radius: 10px;
+      background-color: #e30129; }
+
+.items {
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  background-color: #fff; }
+  .items .item, .items .item1, .items .item2, .items .item3, .items .item4 {
+    display: block;
+    position: absolute;
+    width: 270px;
+    height: 780px;
+    background-color: #fbfcff;
+    background-size: 100% 100%;
+    background-repeat: no-repeat; }
+    .items .item .circle, .items .item1 .circle, .items .item2 .circle, .items .item3 .circle, .items .item4 .circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      position: absolute;
+      left: 12%;
+      top: 40px;
+      border: solid 3px black; }
+    .items .item .title, .items .item1 .title, .items .item2 .title, .items .item3 .title, .items .item4 .title {
+      margin-top: 100px; }
+      .items .item .title h1, .items .item1 .title h1, .items .item2 .title h1, .items .item3 .title h1, .items .item4 .title h1, .items .item .title p, .items .item1 .title p, .items .item2 .title p, .items .item3 .title p, .items .item4 .title p {
+        margin-left: 30px;
+        line-height: 35px; }
+      .items .item .title h1, .items .item1 .title h1, .items .item2 .title h1, .items .item3 .title h1, .items .item4 .title h1 {
+        font-size: 30px;
+        font-weight: 300; }
+      .items .item .title p, .items .item1 .title p, .items .item2 .title p, .items .item3 .title p, .items .item4 .title p {
+        font-size: 25px; }
+  .items .item1 {
+    left: 250px;
+    background-image: url("../images/item1.png"); }
+  .items .item2 {
+    left: 520px;
+    background-image: url("../images/item2.png"); }
+  .items .item3 {
+    left: 790px;
+    background-image: url("../images/item3.png"); }
+  .items .item4 {
+    left: 1060px;
+    background-image: url("../images/item4.png"); }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+  padding: 25px;
+  font-size: 14px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color 0.5s; }
+  footer span {
+    display: none; }
+
+footer:hover {
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+  padding: 25px;
+  font-size: 14px;
+  clear: both;
+  width: 100%;
+  background-color: #999999;
+  color: black; }
+  footer:hover span {
+    display: block; }
