@@ -14,11 +14,14 @@ article, section, div, h1, p {
   box-sizing: border-box; }
 
 .contents {
-  position: relative; }
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0; }
 
 .sidebar {
   position: absolute;
-  left: 0px;
+  left: 0;
   color: #766e6e;
   background-color: #fbfcff;
   display: block;
@@ -65,15 +68,17 @@ article, section, div, h1, p {
   height: 90%;
   position: absolute;
   background-color: #fff; }
-  .items .item, .items .item1, .items .item2, .items .item3, .items .item4 {
+  .items .item1 {
     display: block;
     position: absolute;
     width: 270px;
     height: 780px;
     background-color: #fbfcff;
     background-size: 100% 100%;
-    background-repeat: no-repeat; }
-    .items .item .circle, .items .item1 .circle, .items .item2 .circle, .items .item3 .circle, .items .item4 .circle {
+    background-repeat: no-repeat;
+    left: 250px;
+    background-image: url("../images/item1.png"); }
+    .items .item1 .circle {
       width: 28px;
       height: 28px;
       border-radius: 50%;
@@ -81,28 +86,100 @@ article, section, div, h1, p {
       left: 12%;
       top: 40px;
       border: solid 3px black; }
-    .items .item .title, .items .item1 .title, .items .item2 .title, .items .item3 .title, .items .item4 .title {
+    .items .item1 .title {
       margin-top: 100px; }
-      .items .item .title h1, .items .item1 .title h1, .items .item2 .title h1, .items .item3 .title h1, .items .item4 .title h1, .items .item .title p, .items .item1 .title p, .items .item2 .title p, .items .item3 .title p, .items .item4 .title p {
+      .items .item1 .title h1, .items .item1 .title p {
         margin-left: 30px;
         line-height: 35px; }
-      .items .item .title h1, .items .item1 .title h1, .items .item2 .title h1, .items .item3 .title h1, .items .item4 .title h1 {
+      .items .item1 .title h1 {
         font-size: 30px;
         font-weight: 300; }
-      .items .item .title p, .items .item1 .title p, .items .item2 .title p, .items .item3 .title p, .items .item4 .title p {
+      .items .item1 .title p {
         font-size: 25px; }
-  .items .item1 {
-    left: 250px;
-    background-image: url("../images/item1.png"); }
   .items .item2 {
+    display: block;
+    position: absolute;
+    width: 270px;
+    height: 780px;
+    background-color: #fbfcff;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     left: 520px;
     background-image: url("../images/item2.png"); }
+    .items .item2 .circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      position: absolute;
+      left: 12%;
+      top: 40px;
+      border: solid 3px black; }
+    .items .item2 .title {
+      margin-top: 100px; }
+      .items .item2 .title h1, .items .item2 .title p {
+        margin-left: 30px;
+        line-height: 35px; }
+      .items .item2 .title h1 {
+        font-size: 30px;
+        font-weight: 300; }
+      .items .item2 .title p {
+        font-size: 25px; }
   .items .item3 {
+    display: block;
+    position: absolute;
+    width: 270px;
+    height: 780px;
+    background-color: #fbfcff;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     left: 790px;
     background-image: url("../images/item3.png"); }
+    .items .item3 .circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      position: absolute;
+      left: 12%;
+      top: 40px;
+      border: solid 3px black; }
+    .items .item3 .title {
+      margin-top: 100px; }
+      .items .item3 .title h1, .items .item3 .title p {
+        margin-left: 30px;
+        line-height: 35px; }
+      .items .item3 .title h1 {
+        font-size: 30px;
+        font-weight: 300; }
+      .items .item3 .title p {
+        font-size: 25px; }
   .items .item4 {
+    display: block;
+    position: absolute;
+    width: 270px;
+    height: 780px;
+    background-color: #fbfcff;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     left: 1060px;
     background-image: url("../images/item4.png"); }
+    .items .item4 .circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      position: absolute;
+      left: 12%;
+      top: 40px;
+      border: solid 3px black; }
+    .items .item4 .title {
+      margin-top: 100px; }
+      .items .item4 .title h1, .items .item4 .title p {
+        margin-left: 30px;
+        line-height: 35px; }
+      .items .item4 .title h1 {
+        font-size: 30px;
+        font-weight: 300; }
+      .items .item4 .title p {
+        font-size: 25px; }
 
 footer {
   position: fixed;
@@ -128,3 +205,196 @@ footer:hover {
   color: black; }
   footer:hover span {
     display: block; }
+
+@media only screen and (max-width: 480px) {
+  .header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 30px;
+    background-color: #1d2936; }
+    .header .header-hamburger {
+      position: absolute;
+      cursor: pointer;
+      left: 20px;
+      top: 20px;
+      padding: 12px 18px; }
+      .header .header-hamburger .header-hamburger-layer {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 30px;
+        padding: 2px;
+        border-radius: 4px;
+        background-color: #fff;
+        transform: rotateX(90); }
+        .header .header-hamburger .header-hamburger-layer + .header-hamburger-layer {
+          top: 8px; }
+        .header .header-hamburger .header-hamburger-layer + .header-hamburger-layer + .header-hamburger-layer {
+          top: 16px; }
+  .sidebar {
+    display: none; }
+  .items {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    background-color: #fff; }
+    .items .item1 {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 780px;
+      background-color: #fbfcff;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      left: 0;
+      background-image: url("../images/item1.png"); }
+      .items .item1 .circle {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        position: absolute;
+        left: 12%;
+        top: 40px;
+        border: solid 3px black; }
+      .items .item1 .title {
+        margin-top: 100px; }
+        .items .item1 .title h1, .items .item1 .title p {
+          margin-left: 30px;
+          line-height: 35px; }
+        .items .item1 .title h1 {
+          font-size: 30px;
+          font-weight: 300; }
+        .items .item1 .title p {
+          font-size: 25px; }
+    .items .item2 {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 780px;
+      background-color: #fbfcff;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      left: 100%;
+      background-image: url("../images/item2.png"); }
+      .items .item2 .circle {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        position: absolute;
+        left: 12%;
+        top: 40px;
+        border: solid 3px black; }
+      .items .item2 .title {
+        margin-top: 100px; }
+        .items .item2 .title h1, .items .item2 .title p {
+          margin-left: 30px;
+          line-height: 35px; }
+        .items .item2 .title h1 {
+          font-size: 30px;
+          font-weight: 300; }
+        .items .item2 .title p {
+          font-size: 25px; }
+    .items .item3 {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 780px;
+      background-color: #fbfcff;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      left: 200%;
+      background-image: url("../images/item3.png"); }
+      .items .item3 .circle {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        position: absolute;
+        left: 12%;
+        top: 40px;
+        border: solid 3px black; }
+      .items .item3 .title {
+        margin-top: 100px; }
+        .items .item3 .title h1, .items .item3 .title p {
+          margin-left: 30px;
+          line-height: 35px; }
+        .items .item3 .title h1 {
+          font-size: 30px;
+          font-weight: 300; }
+        .items .item3 .title p {
+          font-size: 25px; }
+    .items .item4 {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 780px;
+      background-color: #fbfcff;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      left: 300%;
+      background-image: url("../images/item4.png"); }
+      .items .item4 .circle {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        position: absolute;
+        left: 12%;
+        top: 40px;
+        border: solid 3px black; }
+      .items .item4 .title {
+        margin-top: 100px; }
+        .items .item4 .title h1, .items .item4 .title p {
+          margin-left: 30px;
+          line-height: 35px; }
+        .items .item4 .title h1 {
+          font-size: 30px;
+          font-weight: 300; }
+        .items .item4 .title p {
+          font-size: 25px; }
+  .swipe-left {
+    position: absolute;
+    left: 10px;
+    top: 270px;
+    padding: 3px; }
+    .swipe-left .swipe-circle {
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      border: solid 2px #fff; }
+      .swipe-left .swipe-circle .swipe-arrow-left, .swipe-left .swipe-circle .swipe-arrow-left-1, .swipe-left .swipe-circle .swipe-arrow-left-2 {
+        position: absolute;
+        border-radius: 1px;
+        left: 9px;
+        width: 15px;
+        padding: 1px;
+        background-color: #fff; }
+      .swipe-left .swipe-circle .swipe-arrow-left-1 {
+        top: 12.5px;
+        transform: rotate(140deg); }
+      .swipe-left .swipe-circle .swipe-arrow-left-2 {
+        bottom: 12.5px;
+        transform: rotate(40deg); }
+  .swipe-right {
+    position: absolute;
+    right: 10px;
+    top: 270px;
+    padding: 3px; }
+    .swipe-right .swipe-circle {
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      border: solid 2px #fff; }
+      .swipe-right .swipe-circle .swipe-arrow-right, .swipe-right .swipe-circle .swipe-arrow-right-1, .swipe-right .swipe-circle .swipe-arrow-right-2 {
+        position: absolute;
+        border-radius: 1px;
+        right: 9px;
+        width: 15px;
+        padding: 1px;
+        background-color: #fff; }
+      .swipe-right .swipe-circle .swipe-arrow-right-1 {
+        top: 12.5px;
+        transform: rotate(40deg); }
+      .swipe-right .swipe-circle .swipe-arrow-right-2 {
+        bottom: 12.5px;
+        transform: rotate(140deg); } }

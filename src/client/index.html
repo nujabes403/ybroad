@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="jejuApp">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, intial-scale="1.0"">
         <title>jeju</title>
+        <script src="../../bower_components/angular/angular.min.js"></script>
+        <script src="app.js"></script>
         <link rel="stylesheet" href="assets/styles/index.css">
     </head>
-    <body>
-        <section class="contents">
+    <body ng-controller="swipeController as swipeCtrl">
+        <div class="header">
+            <div class="header-hamburger">
+                <div class="header-hamburger-layer"></div>
+                <div class="header-hamburger-layer"></div>
+                <div class="header-hamburger-layer"></div>
+            </div>
+        </div>
+        <section swipe class="contents">
             <article class="sidebar">
                 <div class="sidebar-logo">
                     <img src="assets/images/ybroad_logo.png" />
@@ -50,6 +60,18 @@
                     </div>
                 </section>
             </article>
+                <div class="swipe-left">
+                    <div class="swipe-circle">
+                        <div class="swipe-arrow-left-1"></div>
+                        <div class="swipe-arrow-left-2"></div>
+                    </div>
+                </div>
+                <div class="swipe-right">
+                    <div class="swipe-circle">
+                        <div class="swipe-arrow-right-1"></div>
+                        <div class="swipe-arrow-right-2"></div>
+                    </div>
+                </div>
         </section>
         <footer>
             <span>

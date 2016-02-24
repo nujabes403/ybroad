@@ -1,11 +1,43 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-
+$header_color : #1d2936;
 $sidebar_color : #fbfcff;
 $footer_color : #999999;
 $sidebar_font_color:#766e6e;
-$sidebar_size:270px;
+$sidebar_width:270px;
 $item_width:270px;
 $item_height:780px;
+@mixin item($itemWidth){
+    display: block;
+    position: absolute;
+    width:$itemWidth;
+    height:$item_height;
+    background-color: $sidebar_color;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    .circle{
+        width:28px;
+        height:28px;
+        border-radius: 50%;
+        position: absolute;
+        left:12%;
+        top:40px;
+        border:solid 3px black;
+    }
+    .title{
+        margin-top:100px;
+        h1,p{
+            margin-left:30px;
+            line-height: 35px;
+        }
+        h1{
+            font-size:30px;
+            font-weight:300;
+        }
+        p{
+            font-size: 25px;
+        }
+    }
+}
 
 html,body{
     width:100%;
@@ -22,15 +54,19 @@ article,section,div,h1,p{
     box-sizing: border-box;
 }
 .contents{
-    position: relative;
+    width:100%;
+    height:auto;
+    position: absolute;
+    left:0;
 }
+// Sidebar
 .sidebar{
     position: absolute;
-    left:0px;
+    left:0;
     color:$sidebar_font_color;
     background-color: $sidebar_color;
     display: block;
-    width:$sidebar_size;
+    width:$sidebar_width;
     height: 705px;
     .sidebar-logo{
         padding-top:20px;
@@ -77,65 +113,34 @@ article,section,div,h1,p{
         }
     }
 }
+// Items
 .items{
     width:100%;
     height:90%;
     position:absolute;
     background-color: #fff;
-    .item{
-        display: block;
-        position: absolute;
-        width:$item_width;
-        height:$item_height;
-        background-color: $sidebar_color;
-        background-size:100% 100%;
-        background-repeat: no-repeat;
-        .circle{
-            width:28px;
-            height:28px;
-            border-radius: 50%;
-            position: absolute;
-            left:12%;
-            top:40px;
-            border:solid 3px black;
-        }
-        .title{
-            margin-top:100px;
-            h1,p{
-                margin-left:30px;
-                line-height: 35px;
-            }
-            h1{
-                font-size:30px;
-                font-weight:300;
-            }
-            p{
-                font-size: 25px;
-            }
-        }
-    }
     .item1{
-        @extend .item;
+        @include item($item_width);
         left:250px;
         background-image:url('../images/item1.png');
     }
     .item2{
-        @extend .item;
+        @include item($item_width);
         left:250px+$item_width;
         background-image:url('../images/item2.png');
     }
     .item3{
-        @extend .item;
+        @include item($item_width);
         left:250px+($item_width*2);
         background-image:url('../images/item3.png');
     }
     .item4{
-        @extend .item;
+        @include item($item_width);
         left:250px+($item_width*3);
         background-image:url('../images/item4.png');
     }
 }
-
+// Footer
 footer{
     position: fixed;
     bottom: 0;
@@ -161,5 +166,133 @@ footer:hover{
     color:black;
     span{
         display: block;
+    }
+}
+
+// Mobile Screen
+@media only screen and (max-width:480px){
+    .header{
+        position:relative;
+        top:0;
+        width:100%;
+        margin:0;
+        padding:30px;
+        background-color:$header_color;
+        .header-hamburger{
+            position:absolute;
+            cursor: pointer;
+            left:20px;
+            top:20px;
+            padding:12px 18px;
+            .header-hamburger-layer{
+                position: absolute;
+                top:0px;
+                left:0px;
+                width:30px;
+                padding:2px;
+                border-radius: 4px;
+                background-color: #fff;
+                transform: rotateX(90);
+                & + .header-hamburger-layer{
+                    top:8px;
+                }
+                & + .header-hamburger-layer + .header-hamburger-layer{
+                    top:16px;
+                }
+            }
+        }
+    }
+
+    .sidebar{
+        display:none;
+    }
+
+    .items{
+        position: absolute;
+        width:100%;
+        height:90%;
+        background-color: #fff;
+        .item1{
+            @include item(100%);
+            left:0;
+            background-image:url('../images/item1.png');
+        }
+        .item2{
+            @include item(100%);
+            left:100%*1;
+            background-image:url('../images/item2.png');
+        }
+        .item3{
+            @include item(100%);
+            left:100%*2;
+            background-image:url('../images/item3.png');
+        }
+        .item4{
+            @include item(100%);
+            left:100%*3;
+            background-image:url('../images/item4.png');
+        }
+    }
+    .swipe-left{
+        position: absolute;
+        left:10px;
+        top:270px;
+        padding:3px;
+
+        .swipe-circle{
+            border-radius: 50%;
+            width:30px;
+            height:30px;
+            border:solid 2px #fff;
+            .swipe-arrow-left{
+                position: absolute;
+                border-radius: 1px;
+                left:9px;
+                width:15px;
+                padding:1px;
+                background-color: #fff;
+            }
+            .swipe-arrow-left-1{
+                @extend .swipe-arrow-left;
+                top:12.5px;
+                transform: rotate(140deg);
+            }
+            .swipe-arrow-left-2{
+                @extend .swipe-arrow-left;
+                bottom:12.5px;
+                transform: rotate(40deg);
+            }
+        }
+    }
+    .swipe-right{
+        position: absolute;
+        right:10px;
+        top:270px;
+        padding:3px;
+
+        .swipe-circle{
+            border-radius: 50%;
+            width:30px;
+            height:30px;
+            border:solid 2px #fff;
+            .swipe-arrow-right{
+                position: absolute;
+                border-radius: 1px;
+                right:9px;
+                width:15px;
+                padding:1px;
+                background-color: #fff;
+            }
+            .swipe-arrow-right-1{
+                @extend .swipe-arrow-right;
+                top:12.5px;
+                transform: rotate(40deg);
+            }
+            .swipe-arrow-right-2{
+                @extend .swipe-arrow-right;
+                bottom:12.5px;
+                transform: rotate(140deg);
+            }
+        }
     }
 }
